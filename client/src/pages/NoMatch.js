@@ -3,7 +3,7 @@ import React from "react";
 
 function NoMatch() {
   return (
-    <div className="container">
+    <div className="container text-center p-3">
       <div className= "Row">
         <div className="col-md-12">
           < div className="Jumbotron">
