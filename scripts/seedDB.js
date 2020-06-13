@@ -26,7 +26,7 @@ const bookSeed = [
 
 db.Book
   .remove({})
-  .then(() => db.googlebooks.collection.insertMany(bookSeed))
+  .then(() => db.Book.collection.insertMany(bookSeed))
   .then(data => {
     console.log(data.result.n + " books inserted!");
     process.exit(0);
