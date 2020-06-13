@@ -1,0 +1,14 @@
+.nav-link{
+   
+    cursor: pointer;
+    border: 2px solid black;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-weight: bolder;
+    color: black;
+    
+  }
+ .btn{
+    margin-right: 10px;
+ }
