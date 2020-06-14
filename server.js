@@ -1,6 +1,6 @@
 const express= require("express")
 const mongoose= require("mongoose")
-const routes = require("./routes/index");
+
 
 var Book=(require("./models/Book"))
 //Settings
@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended:true}))
 
 
 //Routes
-app.use(routes);
+app.use("/api/books",require("./routes/apiBooks"));
 
 const MONGODB_URI=process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
 mongoose.connect(MONGODB_URI,{
