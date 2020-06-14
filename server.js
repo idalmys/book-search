@@ -16,9 +16,16 @@ app.use(express.urlencoded({extended:true}))
 
 //Routes
 app.use("/api/books",require("./routes/apiBooks"));
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "/../client/build/index.html"));
-   });
+
+//Serve static folder
+if (process.env.NODE_ENV ==="production"){
+    app.use(express.static("client/build"))
+
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+    })
+}
+
 const MONGODB_URI=process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
 mongoose.connect(MONGODB_URI,{
     useNewUrlParser: true,
